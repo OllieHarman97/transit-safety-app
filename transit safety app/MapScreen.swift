@@ -31,7 +31,8 @@ struct MapScreen: View {
             
             
             
-            GoogleMapView().frame(width: 377.0, height: 400, alignment: .center)
+            GoogleMapView()
+                .frame(width: 377.0, height: 400, alignment: .center)
             
             
         }
@@ -46,16 +47,16 @@ struct MapScreen_Previews: PreviewProvider {
 
 struct GoogleMapView: UIViewRepresentable {
     
-    //@Binding var dest: String
+    private let zoom: Float = 15.0
     // 1.
-    func makeUIView(context: UIViewRepresentableContext<GoogleMapView>) -> GMSMapView {
-        let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.2, zoom: 6.0)
+    func makeUIView(context: Self.Context) -> GMSMapView {
+        let camera = GMSCameraPosition.camera(withLatitude: 40.7128, longitude: 74.0060, zoom: 12.0)
         let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
         return mapView
     }
     
     // 2.
-    func updateUIView(_ uiView: GMSMapView, context: UIViewRepresentableContext<GoogleMapView>) {
+    func updateUIView(_ mapView: GMSMapView, context: Context) {
         // 3.
         
         }
