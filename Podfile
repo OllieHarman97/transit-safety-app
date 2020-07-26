@@ -9,6 +9,9 @@ target 'transit safety app' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
+  pod 'GoogleMaps'
+  pod 'GooglePlaces'
+
   # Pods for transit safety app
 
   target 'transit safety appTests' do
